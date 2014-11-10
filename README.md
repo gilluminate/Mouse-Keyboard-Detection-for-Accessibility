@@ -5,6 +5,8 @@ Detects keyboard and mouse events to add a classname to the &lt;body> tag. Style
 
 This can allow for more visible and accessible styles for keyboard users while maintaining a nice clean look and feel for your typical mouse user.
 
+Only 368 bytes minified!
+
 Requires jQuery.
 
 Setup
