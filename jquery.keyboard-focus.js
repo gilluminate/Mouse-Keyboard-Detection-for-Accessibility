@@ -14,8 +14,10 @@
                 that.addClass(keyFocusConf.mouseFocusClass);
             })
             .bind('keydown', function(e){
-                that.removeClass(keyFocusConf.mouseFocusClass);
-                that.addClass(keyFocusConf.keyFocusClass);
+                if(e.keyCode==9){
+                    that.removeClass(keyFocusConf.mouseFocusClass);
+                    that.addClass(keyFocusConf.keyFocusClass);
+                }
             });
     };
 })(jQuery);
