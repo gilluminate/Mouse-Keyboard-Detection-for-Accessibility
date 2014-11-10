@@ -15,3 +15,5 @@ include in your css
 `.mouse-focus :focus {
 	outline: none;
 }`
+
+Feel free to add specific `.keyboard-focus` or `.mouse-focus` classes depending which type of user you want to style for.
