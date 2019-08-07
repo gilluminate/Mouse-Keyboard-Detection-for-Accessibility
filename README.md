@@ -1,11 +1,9 @@
 Mouse/Keyboard Detection
 ========================
 
-Detects keyboard and mouse events to add a classname to the &lt;body> tag. Styles can vary for :focus depending on whether or not the classnames are present.
+Detects keyboard and mouse events to add a classname to the `<body>` tag. Styles can vary for :focus depending on whether or not the classnames are present.
 
 This can allow for more visible and accessible styles for keyboard users while maintaining a nice clean look and feel for your typical mouse user.
-
-Only 368 bytes minified!
 
 Requires jQuery.
 
@@ -21,3 +19,5 @@ include in your css
 `.mouse-focus :focus { outline: none; }`
 
 Feel free to add specific `.keyboard-focus` or `.mouse-focus` usage in your css depending which type of user you want to style for.
+
+Defaults to `.mouse-focus` on page load

@@ -1,23 +1,23 @@
-(function($){
-    var keyFocusConf = {
-        keyFocusClass : 'keyboard-focus',
-        mouseFocusClass : 'mouse-focus'
-    };
-    $(document).ready(function(){
-        $('body').trackFocus();
+(function ($) {
+    var keyFocusClass = 'keyboard-focus';
+    var mouseFocusClass = 'mouse-focus';
+    $(function () {
+        var bodyEl = $('body');
+        bodyEl.addClass(mouseFocusClass);
+        bodyEl.on('mousedown', function () {
+            bodyEl.removeClass(keyFocusClass);
+            bodyEl.addClass(mouseFocusClass);
+        });
+        bodyEl.on('keydown', function (e) {
+            var ignoreArrowKeys = e.target.nodeName === 'INPUT' ||
+                e.target.nodeName === 'TEXTAREA' ||
+                e.target.nodeName === 'CONTENTEDITABLE';
+            // Watch for Tab key or any of the arrow keys
+            if (e.key === 'Tab' ||
+                (e.key.indexOf('Arrow') === 0 && !ignoreArrowKeys)) {
+                bodyEl.removeClass(mouseFocusClass);
+                bodyEl.addClass(keyFocusClass);
+            }
+        });
     });
-    $.fn.trackFocus = function () {
-        var that = $(this);
-        that
-            .bind('mousedown', function(e){
-                that.removeClass(keyFocusConf.keyFocusClass);
-                that.addClass(keyFocusConf.mouseFocusClass);
-            })
-            .bind('keydown', function(e){
-                if(e.keyCode==9){
-                    that.removeClass(keyFocusConf.mouseFocusClass);
-                    that.addClass(keyFocusConf.keyFocusClass);
-                }
-            });
-    };
 })(jQuery);
